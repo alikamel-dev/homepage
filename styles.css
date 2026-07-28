@@ -888,6 +888,14 @@ div.project-image {
     flex-direction: column;
   }
 
+  #author-name .fit-text-wrapper > * {
+    margin-bottom: -2.5rem;
+  }
+
+  #author-name .fit-text-wrapper > :last-child {
+    margin-bottom: -1rem;
+  }
+
   #about-me {
     padding: 0;
 
