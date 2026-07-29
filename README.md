@@ -2,43 +2,94 @@
 
 A responsive homepage — something you might find on a portfolio site of sorts.
 
-This is _not_ my actual portfolio site, but rather my final HTML/CSS project in the [Full Stack JavaScript](https://www.theodinproject.com/paths/full-stack-javascript) path of [The Odin Project (TOP)](https://www.theodinproject.com) as a practice on [responsive design](https://www.theodinproject.com/paths/full-stack-javascript/courses/advanced-html-and-css#responsive-design).
+> [!NOTE]
+> I am _temporarily_ using this project as my portfolio site until I build one when I finish The Odin Project's curriculum. Even then, it is going to be continually updated to include any new projects.
 
-## Contributing to or Forking the project
+This is my final HTML/CSS project in the [Full Stack JavaScript](https://theodinproject.com/paths/full-stack-javascript) path of [The Odin Project (TOP)](https://theodinproject.com), created as a practice on [responsive design](https://theodinproject.com/paths/full-stack-javascript/courses/advanced-html-and-css#responsive-design) with a focus on accessibility.
 
-### Contribution
+> [!NOTE]
+> Despite being primarily a practice project, contributions are still welcome — you can try resolving any [issues](https://github.com/alikamel-dev/homepage/issues), or, if you think you have found an issue, [create an issue](https://github.com/alikamel-dev/homepage/issues/new) or solve it and [create a pull request](https://github.com/alikamel-dev/homepage/compare).
 
-- If you do not mind contributing to this project, start by checking the [issues](https://github.com/alikamel-dev/homepage/issues) and see if you can resolve them.
-- If you have any issues with the project, improvements to the code, or small features to add, feel free to **[open an issue](https://github.com/alikamel-dev/homepage/issues/new)** or **create a pull request**.
+## Viewing the project
 
-**Contributors' GitHub profiles will be linked to in the [acknowledgements](#acknowledgements) section of this README file**.
+You can [view the project on GitHub Pages](https://alikamel-dev.github.io/homepage). Do not forget to **resize the window** to see how the website responds!
 
-### Forking
+> [!IMPORTANT]
+> This website is developed primarily for the latest version of [Google Chrome](https://google.com/chrome). All of the features that the website uses are [Baseline](https://web.dev/baseline) — so the website should display and function properly in the latest versions of all major web browsers, with minor differences in presentation. If there is an issue with how the website renders and/or functions, try using the latest version of a major web browser.
 
-If you decide to fork this project, please link to this repository in your repository's README file and to [the project's GitHub Pages website](https://alikamel-dev.github.io/homepage) in your project release. This is not required by the [license of this project](LICENSE), but I would appreciate it.
+## Design
 
-## Acknowledgements
+The website is designed to closely resemble the [original design](https://github.com/alikamel-dev/homepage/tree/main/design) provided by The Odin Project for desktop, tablet, and mobile layouts. That said, there are some differences, listed below.
 
-_No one has contributed to this project yet - [Be the first to contribute!](#contribution)_
+### Differences from the original design
+
+#### General
+
+- The content in the original design has been replaced by content about me.
+
+- Links to online accounts in my implementation may link to more, less, or different online platforms than those in the original. If a link to an [X](https://x.com) account is included, it will use the current X logo instead of the former Twitter logo used in the original design.
+
+- The design files do not contain interactive text elements, such as links and buttons, thus I chose my own variants of the colors used in the design for these links with accessibility in mind.
+
+- The design files do not contain selected text, thus I chose the colors and background colors for selected text with accessibility in mind.
+
+- Transitions and Animations were entirely decided by me,
+
+- Obviously there are slight differences in text, icon, and image sizes, as well as differences in spacing, alignment, and other properties, mainly due to the lack of any measurements in the original design, and sometimes for aesthetic purposes.
+
+#### _About me_ section
+
+- The two images of a woman in the original design have been replaced by two stock images of a man in similar positions (that man is _not_ me — I do not have a good photo of myself handy at the moment). The author of the aforementioned two stock images is attributed at the bottom of the section.
+
+#### _My work_ section
+
+- There is a button at the start of this section that allows sorting projects from the latest (default) or the earliest.
+
+- Screenshots of projects may replace the _screenshot of project_ text placeholder in some or all of the project cards.
+
+- There are _latest_ and _in progress_ tags in the upper-left corner of the card corresponding to the latest project and cards corresponding to projects in progress, respectively.
+
+- The card corresponding to the latest project is highlighted for a small amount of time when scrolled into view.
+
+- Cards corresponding to projects in progress do not contain links to their GitHub repositories or GitHub Pages websites.
+
+#### _Contact me_ section
+
+- A variant of black is used as the text color instead of the white color used in the original design, in order to ensure adequate color contrast and thus promote accessibility.
+
+### Fonts and Colors
+
+### Fonts
+
+My implementation uses the same fonts used in the [original design](https://github.com/alikamel-dev/homepage/tree/main/design): [Playfair Display](https://fonts.google.com/specimen/Playfair+Display) for heading text and [Roboto](https://fonts.google.com/specimen/Roboto) for regular text.
+
+### Colors
+
+My implementation uses the same colors used in the [original design](https://github.com/alikamel-dev/homepage/tree/main/design), except for some differences, most of which have been documented [above](#differences-from-the-original-design).
+
+The following are the colors I used for the design of the website. Each hexadecimal color value links to the [ColorHexa](https://colorhexa.com) page of the color.
+
+| Color                                                                                                                           | Hexadecimal color value                   | CSS Variable                  |
+|---------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|-------------------------------|
+| **Primary color**: Background color for header decoration and footer.                                                           | [`#0891b2`](https://colorhexa.com/0891b2) | `--brand-color-primary`       |
+| **Secondary color**: Background color for main content.                                                                         | [`#ffffff`](https://colorhexa.com/ffffff) | `--brand-color-secondary`     |
+| **Alternate primary color**: Used instead of the primary color in some areas to ensure adequate color contrast.                 | [`#0881a0`](https://colorhexa.com/0881a0) | `--brand-color-primary-alt`   |
+| **Alternate secondary color**: Used instead of the secondary color in footer to ensure adequate color contrast.                 | [`#1c1c1c`](https://colorhexa.com/1c1c1c) | `--brand-color-secondary-alt` |
+| **Heading text color**: Used for headings, except the first-level heading containing the author name. Also used for icon links. | [`#060b04`](https://colorhexa.com/060b04) | `--text-color-display`        |
+| **Regular text color**: Used for regular text, with exceptions listed below.                                                    | [`#575655`](https://colorhexa.com/575655) | `--text-color-body`           |
+
+#### Additional notes
+
+- **Selection colors**: The foreground and background colors are the secondary and alternative primary colors, respectively, except in the footer where the colors are inverted.
+
+- **Project card tag colors**: The foreground and background colors are the secondary and alternate primary colors, respectively.
+
+- The color of the border used to highlight the latest project matches the background color of the _latest_ tag.
+
+- The primary color is also used as a fallback background color in project screenshot placeholders in case the script used to apply random background colors to them does not load.
+
+- The alternate colors are used in the outlines of interactive elements that appear on keyboard focus.
 
 ## Other Projects
 
-Feel free to view my other projects on GitHub:
-
-- [_Rock, Paper, Scissors!_ console game](https://github.com/alikamel-dev/rock-paper-scissors-cpp)
-- [_Math Game_](https://github.com/alikamel-dev/math-game)
-
-### Other Projects with The Odin Project
-
-The following are my previous projects with The Odin Project, ordered from the earliest to the most recent:
-
-1. [_Recipes_](https://github.com/alikamel-dev/odin-recipes)
-2. [_Landing Page_](https://github.com/alikamel-dev/landing-page)
-3. [_Rock, Paper, Scissors_](https://github.com/alikamel-dev/rock-paper-scissors)
-4. [_Etch-A-Sketch_](https://github.com/alikamel-dev/etch-a-sketch)
-5. [_Calculator_](https://github.com/alikamel-dev/calculator)
-6. [_Sign-Up Form_](https://github.com/alikamel-dev/sign-up-form)
-7. [_Admin Dashboard_](https://github.com/alikamel-dev/admin-dashboard)
-8. [_Library_](https://github.com/alikamel-dev/library)
-9. [_Tic-Tac-Toe_](https://github.com/alikamel-dev/tic-tac-toe)
-10. [_Restaurant Page_](https://github.com/alikamel-dev/restaurant-page)
+Feel free to view all of my projects [here](https://alikamel-dev.github.io/homepage).
