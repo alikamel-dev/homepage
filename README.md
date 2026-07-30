@@ -17,11 +17,11 @@ This is my final HTML/CSS project in the [Full Stack JavaScript](https://theodin
 You can [view the project on GitHub Pages](https://alikamel-dev.github.io/homepage). Do not forget to **resize the window** to see how the site responds!
 
 > [!IMPORTANT]
-> This site is developed primarily for the latest version of [Google Chrome](https://google.com/chrome). Most of the features that the site uses are [Baseline](https://web.dev/baseline) or otherwise progressive enhancements that fail gracefully, so the site should display and function properly in the latest versions of:
+> This site is developed primarily for the latest version of [Google Chrome](https://google.com/chrome). Most of the features that the site uses are [Baseline](https://web.dev/baseline) or otherwise progressive enhancements that fail gracefully, so the site should display and function properly, with minor visual differences, in the latest versions of:
 > - Chrome (Desktop and Android)
 > - [Edge](https://microsoft.com/edge) (Desktop)
 > - [Firefox](https://firefox.com) (Desktop and Android)
-> - [Safari](https://apple.com/safari) with minor differences in presentation. (MacOS and iOS)
+> - [Safari](https://apple.com/safari) (MacOS and iOS)
 
 > [!TIP]
 > If you encounter an issue with the site, try installing the latest version of one of the aforementioned web browsers. If that does not work, feel free to [create an issue](https://github.com/alikamel-dev/homepage/issues/new) or solve it and [create a pull request](https://github.com/alikamel-dev/homepage/compare).
