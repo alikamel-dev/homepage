@@ -5,21 +5,28 @@ A responsive homepage — something you might find on a portfolio site of sorts.
 > [!NOTE]
 > I am _temporarily_ using this project as my portfolio site until I build one when I finish The Odin Project's curriculum. Even then, it is going to be continually updated to include any new projects.
 
-This is my final HTML/CSS project in the [Full Stack JavaScript](https://theodinproject.com/paths/full-stack-javascript) path of [The Odin Project (TOP)](https://theodinproject.com), created as a practice on [responsive design](https://theodinproject.com/paths/full-stack-javascript/courses/advanced-html-and-css#responsive-design) with a focus on accessibility.
+This is my final HTML/CSS project in the [Full Stack JavaScript](https://theodinproject.com/paths/full-stack-javascript) path of [The Odin Project (TOP)](https://theodinproject.com), created as a practice on [responsive design](https://theodinproject.com/paths/full-stack-javascript/courses/advanced-html-and-css#responsive-design), with quite a heavy focus on accessibility on my part.
 
 > [!NOTE]
-> Despite being primarily a practice project, contributions are still welcome — you can try resolving any [issues](https://github.com/alikamel-dev/homepage/issues), or, if you think you have found an issue, [create an issue](https://github.com/alikamel-dev/homepage/issues/new) or solve it and [create a pull request](https://github.com/alikamel-dev/homepage/compare).
+> Despite being primarily a practice project, contributions are still welcome! You can try resolving any [issues](https://github.com/alikamel-dev/homepage/issues), or, if you think you have found one, feel free to [create an issue](https://github.com/alikamel-dev/homepage/issues/new) or solve it and [create a pull request](https://github.com/alikamel-dev/homepage/compare).
 
-## Viewing the project
+## Viewing the site
 
-You can [view the project on GitHub Pages](https://alikamel-dev.github.io/homepage). Do not forget to **resize the window** to see how the website responds!
+You can [view the project on GitHub Pages](https://alikamel-dev.github.io/homepage). Do not forget to **resize the window** to see how the site responds!
 
 > [!IMPORTANT]
-> This website is developed primarily for the latest version of [Google Chrome](https://google.com/chrome). All of the features that the website uses are [Baseline](https://web.dev/baseline) — so the website should display and function properly in the latest versions of all major web browsers, with minor differences in presentation. If there is an issue with how the website renders and/or functions, try using the latest version of a major web browser.
+> This site is developed primarily for the latest version of [Google Chrome](https://google.com/chrome). Most of the features that the site uses are [Baseline](https://web.dev/baseline) or otherwise progressive enhancements that fail gracefully, so the site should display and function properly in the latest versions of:
+> - Chrome (Desktop and Android)
+> - [Edge](https://microsoft.com/edge) (Desktop)
+> - [Firefox](https://firefox.com) (Desktop and Android)
+> - [Safari](https://apple.com/safari) with minor differences in presentation. (MacOS and iOS)
+
+> [!TIP]
+> If you encounter an issue with the site, try installing the latest version of one of the aforementioned web browsers. If that does not work, feel free to [create an issue](https://github.com/alikamel-dev/homepage/issues/new) or solve it and [create a pull request](https://github.com/alikamel-dev/homepage/compare).
 
 ## Design
 
-The website is designed to closely resemble the [original design](https://github.com/alikamel-dev/homepage/tree/main/design) provided by The Odin Project for desktop, tablet, and mobile layouts. That said, there are some differences, listed below.
+The site is designed to closely resemble the [original design](https://github.com/alikamel-dev/homepage/tree/main/design) provided by The Odin Project for desktop, tablet, and mobile layouts. That said, there are some differences, listed below.
 
 ### Differences from the original design
 
@@ -67,7 +74,7 @@ My implementation uses the same fonts used in the [original design](https://gith
 
 My implementation uses the same colors used in the [original design](https://github.com/alikamel-dev/homepage/tree/main/design), except for some differences, most of which have been documented [above](#differences-from-the-original-design).
 
-The following are the colors I used for the design of the website. Each hexadecimal color value links to the [ColorHexa](https://colorhexa.com) page of the color.
+The following are the colors I used for the design of the site. Each hexadecimal color value links to the [ColorHexa](https://colorhexa.com) page of the color.
 
 | Color                                                                                                                           | Hexadecimal color value                   | CSS Variable                  |
 |---------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|-------------------------------|
