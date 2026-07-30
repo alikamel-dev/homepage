@@ -1,5 +1,7 @@
 # Homepage
 
+![A black mobile phone, a black tablet behind it to the left, and a desktop monitor behind it to the right, all displaying the responsive homepage](responsive-homepage-3-devices-black.png)
+
 A responsive homepage — something you might find on a portfolio site of sorts.
 
 > [!NOTE]
