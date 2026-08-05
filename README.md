@@ -42,7 +42,7 @@ The site is designed to closely resemble the [original design](https://github.co
 
 - The design files do not contain selected text, thus I chose the colors and background colors for selected text with accessibility in mind.
 
-- Transitions and Animations were entirely decided by me,
+- Interaction effects (e.g. hover and focus effects), transitions and animations were entirely decided by me.
 
 - Obviously there are slight differences in text, icon, and image sizes, as well as differences in spacing, alignment, and other properties, mainly due to the lack of any measurements in the original design, and sometimes for aesthetic purposes.
 
@@ -98,6 +98,8 @@ The following are the colors I used for the design of the site. Each hexadecimal
 - The primary color is also used as a fallback background color in project screenshot placeholders in case the script used to apply random background colors to them does not load.
 
 - The alternate colors are used in the outlines of interactive elements that appear on keyboard focus.
+
+- Icons used to represent links to online accounts have their original brand colors in the header, and the alternate secondary color in the footer, when hovered or keyboard-focused. The same colors are also applied to their outlines on keyboard focus.
 
 ## Other Projects
 

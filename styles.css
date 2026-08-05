@@ -141,8 +141,8 @@
 }
 
 .inverted-color-scheme *::selection {
-  background-color: var(--brand-color-secondary) !important;
-  color: var(--brand-color-primary-alt) !important;
+  background-color: var(--brand-color-secondary);
+  color: var(--brand-color-primary-alt);
 }
 
 /* Since all `img` and `svg` elements are not rendered in inline layout (see below), they are not underlined along with link text. */
@@ -155,24 +155,48 @@ a:not(:is(.icon, .icon-with-text)) {
   color: var(--brand-color-primary-alt);
 }
 
-a.icon, a.icon-with-text {
-  text-decoration: none;  
-  color: inherit;
-}
-
 a:hover, a:not(:is(.icon, .icon-with-text)):focus-visible {
   text-decoration: underline;
+}
+
+a.icon {
+  color: var(--text-color-display);
+
+  transition: color 300ms ease-out;
+}
+
+a.icon:hover, a.icon:focus-visible {
+  color: var(--original-color);
+
+  transition-timing-function: ease-in;
+}
+
+.author-links a.icon[aria-label="GitHub"] {
+  --original-color: #181717;
+}
+
+.author-links a.icon[aria-label="Bluesky"] {
+  --original-color: #1185FE;
+}
+
+.author-links a.icon[aria-label="Mastodon"] {
+  --original-color: #6364FF;
+}
+
+.inverted-color-scheme a.icon:hover, .inverted-color-scheme a.icon:focus-visible {
+  color: var(--brand-color-secondary-alt);
+  outline-color: inherit;
 }
 
 a.icon:focus-visible, a.icon-with-text:focus-visible {
   /* TODO: Test whether using `rem` is more suitable than using `px` for this ruleset. */
 
-  outline: 0.2rem solid var(--brand-color-primary-alt);
-  outline-offset: 0.2rem;
+  outline: 0.2rem solid var(--original-color, var(--brand-color-primary-alt));
+  outline-offset: 0.4rem;
 }
 
-.inverted-color-scheme a.icon:focus-visible, .inverted-color-scheme a.icon-with-text:focus-visible {
-  outline-color: var(--brand-color-secondary-alt) !important;
+a.icon-with-text:focus-visible {
+  outline-color: inherit;
 }
 
 a[target="_blank"] {
@@ -208,7 +232,7 @@ a[target="_blank"] svg[aria-label="opens in a new tab"] {
 
 .underlined:focus-visible {
   outline: 0.2rem solid currentColor;
-  outline-offset: 0.2rem;
+  outline-offset: 0.3rem;
 }
 
 abbr {
@@ -343,7 +367,7 @@ small {
 
 /* TODO: Make author links scale with the viewport or the font size of the parent. */
 
-.author-links img {
+.author-links img, .author-links svg {
   width: var(--author-link-width);
   height: var(--author-link-width);
 }
@@ -397,9 +421,17 @@ body {
   color: var(--text-color-body);
 }
 
-.inverted-color-scheme, .inverted-color-scheme * {
-  background-color: var(--brand-color-primary) !important;
-  color: var(--brand-color-secondary-alt) !important;
+.inverted-color-scheme, .inverted-color-scheme > *, .inverted-color-scheme .underlined {
+  background-color: var(--brand-color-primary);
+  color: var(--brand-color-secondary-alt);
+}
+
+.inverted-color-scheme * {
+  color: inherit;
+}
+
+.inverted-color-scheme a.icon {
+  color: var(--text-color-display);
 }
 
 .inverted-color-scheme a:not(.icon, .icon-with-text) {
