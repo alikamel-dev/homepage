@@ -12,6 +12,10 @@ A responsive homepage — something you might find on a portfolio site of sorts.
 > - Page load animations in page header
 > - Hover and focus color transitions for icon links
 > - Disable animations that trigger undesirable effects in users with motion sensitivities based on operating system setting ([`prefers-reduced-motion`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion))
+> 
+> **Features and fixes coming soon!**
+> 1. Scroll-driven animations
+> 2. Project screenshots
 
 This is my final HTML/CSS project in the [Full Stack JavaScript](https://theodinproject.com/paths/full-stack-javascript) path of [The Odin Project (TOP)](https://theodinproject.com), created as a practice on [responsive design](https://theodinproject.com/paths/full-stack-javascript/courses/advanced-html-and-css#responsive-design), with an additional focus on accessibility on my part.
 
