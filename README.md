@@ -1,13 +1,13 @@
 # Homepage
 
-![A black mobile phone, a black tablet behind it to the left, and a desktop monitor behind it to the right, all displaying the responsive homepage](responsive-homepage-3-devices-black.png)
+![A black mobile phone, a black tablet behind it to the left, and a desktop monitor behind it to the right, each displaying its respective layout of the responsive homepage](responsive-homepage-3-devices-black.png "Desktop, Tablet, and Mobile layouts of Homepage")
 
 A responsive homepage — something you might find on a portfolio site of sorts.
 
 > [!NOTE]
 > I am _temporarily_ using this project as my portfolio site until I build one when I finish The Odin Project's curriculum. Even then, it is going to be continually updated to include any new projects.
 
-This is my final HTML/CSS project in the [Full Stack JavaScript](https://theodinproject.com/paths/full-stack-javascript) path of [The Odin Project (TOP)](https://theodinproject.com), created as a practice on [responsive design](https://theodinproject.com/paths/full-stack-javascript/courses/advanced-html-and-css#responsive-design), with quite a heavy focus on accessibility on my part.
+This is my final HTML/CSS project in the [Full Stack JavaScript](https://theodinproject.com/paths/full-stack-javascript) path of [The Odin Project (TOP)](https://theodinproject.com), created as a practice on [responsive design](https://theodinproject.com/paths/full-stack-javascript/courses/advanced-html-and-css#responsive-design), with an additional focus on accessibility on my part.
 
 > [!NOTE]
 > Despite being primarily a practice project, contributions are still welcome! You can try resolving any [issues](https://github.com/alikamel-dev/homepage/issues), or, if you think you have found one, feel free to [create an issue](https://github.com/alikamel-dev/homepage/issues/new) or solve it and [create a pull request](https://github.com/alikamel-dev/homepage/compare).
@@ -21,7 +21,10 @@ You can [view the project on GitHub Pages](https://alikamel-dev.github.io/homepa
 > - Chrome (Desktop and Android)
 > - [Edge](https://microsoft.com/edge) (Desktop)
 > - [Firefox](https://firefox.com) (Desktop and Android)
-> - [Safari](https://apple.com/safari) (MacOS and iOS)
+> - [Safari](https://apple.com/safari) (macOS and iOS)
+
+> [!NOTE]
+> If you have any kind of motion sensitivies, you can still safely view the site as long as [animations are disabled in your operating system](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion#user_preferences). Motion-based animations that may trigger discomfort, as well as smooth scrolling, are automatically disabled based on the operating system setting.
 
 > [!TIP]
 > If you encounter an issue with the site, try installing the latest version of one of the aforementioned web browsers. If that does not work, feel free to [create an issue](https://github.com/alikamel-dev/homepage/issues/new) or solve it and [create a pull request](https://github.com/alikamel-dev/homepage/compare).
@@ -46,6 +49,9 @@ The site is designed to closely resemble the [original design](https://github.co
 
 - Obviously there are slight differences in text, icon, and image sizes, as well as differences in spacing, alignment, and other properties, mainly due to the lack of any measurements in the original design, and sometimes for aesthetic purposes.
 
+> [!NOTE]
+> Currently, there is an issue where resizing the browser window causes the header animations that play on page load to play when the page switches to the tablet layout, but not when it switches to the desktop and the mobile, leading to inconsistent behavior. I am going to work on fixing this issue.
+
 #### _About me_ section
 
 - The two images of a woman in the original design have been replaced by two stock images of a man in similar positions (that man is _not_ me — I do not have a good photo of myself handy at the moment). The author of the aforementioned two stock images is attributed at the bottom of the section.
@@ -65,8 +71,6 @@ The site is designed to closely resemble the [original design](https://github.co
 #### _Contact me_ section
 
 - A variant of black is used as the text color instead of the white color used in the original design, in order to ensure adequate color contrast and thus promote accessibility.
-
-### Fonts and Colors
 
 ### Fonts
 
