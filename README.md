@@ -16,6 +16,10 @@ This is my final HTML/CSS project in the [Full Stack JavaScript](https://theodin
 
 You can [view the project on GitHub Pages](https://alikamel-dev.github.io/homepage). Do not forget to **resize the window** to see how the site responds!
 
+Currently, there are two unexpected but minor bugs that occur on resizing the browser window on the same device:
+- The page load animation plays when the page switches to the tablet layout during resizing, but not when it switches to the desktop and the mobile layouts.
+- The author name "Ali Kamel" uses an incorrectly large size and an incorrect position when the the page switches to the tablet layout, requiring a page reload to correct them.
+
 > [!IMPORTANT]
 > This site is developed primarily for the latest version of [Google Chrome](https://google.com/chrome). Most of the features that the site uses are [Baseline](https://web.dev/baseline) or otherwise progressive enhancements that fail gracefully, so the site should display and function properly, with minor visual differences, in the latest versions of:
 > - Chrome (Desktop and Android)
