@@ -8,14 +8,14 @@ A responsive homepage — something you might find on a portfolio site of sorts.
 > I am _temporarily_ using this project as my portfolio site until I build one when I finish The Odin Project's curriculum. Even then, it is going to be continually updated to include any new projects.
 
 > [!NOTE]
-> **New features and fixes!**
-> - Page load animations in page header
-> - Hover and focus color transitions for icon links
-> - Disable animations that trigger undesirable effects in users with motion sensitivities based on operating system setting ([`prefers-reduced-motion`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion))
+> **New features and fixes!** (ordered from most recent)
+> - Scroll-driven animations for page sections, except header.
+> - Make visual viewport (visible part of the page in browser window) only contain page header on page load
+> - Page-load animations for header
 > 
-> **Features and fixes coming soon!**
-> 1. Scroll-driven animations
-> 2. Project screenshots
+> **Features and fixes coming soon!** (ordered from first to be implemented)
+> 1. Project screenshots
+> 2. Scroll-triggered instead of Scroll-driven animations for "Contact me" section
 
 This is my final HTML/CSS project in the [Full Stack JavaScript](https://theodinproject.com/paths/full-stack-javascript) path of [The Odin Project (TOP)](https://theodinproject.com), created as a practice on [responsive design](https://theodinproject.com/paths/full-stack-javascript/courses/advanced-html-and-css#responsive-design), with an additional focus on accessibility on my part.
 
@@ -67,6 +67,8 @@ The site is designed to closely resemble the [original design](https://github.co
 > Currently, there is an issue where resizing the browser window causes the header animations that play on page load to play when the page switches to the tablet layout, but not when it switches to the desktop and the mobile, leading to inconsistent behavior. I am going to work on fixing this issue.
 
 #### _About me_ section
+
+- As this is the header section, I decided to make it the only section that appears in the visual viewport on page load, with the [next section](#my-work-section) not appearing underneath.
 
 - The two images of a woman in the original design have been replaced by two stock images of a man in similar positions (that man is _not_ me — I do not have a good photo of myself handy at the moment). The author of the aforementioned two stock images is attributed at the bottom of the section.
 
