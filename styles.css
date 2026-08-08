@@ -469,6 +469,10 @@ body > * {
 
   position: relative;
   isolation: isolate;
+
+  height: 100dvh;
+
+  padding-top: 0;
 }
 
 #page-header::before {
@@ -481,7 +485,7 @@ body > * {
   z-index: -1;
 
   width: 100%;
-  height: 100%;
+  height: 85%;
 
   background-color: var(--brand-color-primary);
 
@@ -786,8 +790,9 @@ div.project-image {
 @media (600px <= width < 1200px) {
   body > * {
     --padding-left-right: 11%;
+    --padding-top-bottom: 40px;
 
-    padding: 40px 0;
+    padding: var(--padding-top-bottom) 0;
     padding-left: calc((var(--padding-left-right) - var(--about-me-margin-left)) * var(--author-name-photo-scale));
     padding-right: calc(var(--padding-left-right) * var(--author-name-photo-scale));
 
@@ -804,6 +809,11 @@ div.project-image {
   #page-header, #page-header > * {
     /* When the header and/or the "about me" section has/have a flexbox or grid layout, `float: left` and margins on `div#author-name-and-photo` do not produce the desired results. */
     display: block;
+  }
+
+  #page-header {
+    /* Override the `padding-top: 0;` rule used in desktop layout. */
+    padding-top: var(--padding-top-bottom);
   }
 
   #author-name-and-photo {
@@ -865,6 +875,7 @@ div.project-image {
   }
 }
 
+/* Mobile styles */
 @media (width < 600px) {
   .section-title {
     --section-title-margin-bottom: 4px;
@@ -909,6 +920,9 @@ div.project-image {
 
     /* Makes the page header span the entire visual viewport height if its content height is less than or equal to the visual viewport height, and overflow the viewport otherwise. */
     min-height: 100dvh;
+
+    /* Override the `height: 100dvh;` rule in desktop and tablet styles. */
+    height: initial;
   }
 
   #page-header::before {
