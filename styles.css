@@ -1107,6 +1107,32 @@ TODOs:
   animation-range-end: contain 0%;
 }
 
+#page-footer {
+  view-timeline: --page-footer-timeline;
+
+  overflow: hidden;
+}
+
+#contact-me > .section-text, #contact-me #author-footer-photo {
+  --fade-in-start-y: 0;
+
+  --fade-in-start-opacity: 1;
+
+  animation: var(--fade-in);
+  animation-fill-mode: backwards;
+  
+  animation-timeline: --page-footer-timeline;
+  animation-range: cover 0% contain 0%;
+}
+
+#contact-me > .section-text {
+  --fade-in-start-x: -100%;
+}
+
+#contact-me #author-footer-photo {
+  --fade-in-start-x: 100%;
+}
+
 /* Tablet animations */
 @media (600px <= width < 1200px) {
   /* Setting `z-index` for the animated elements of the header ensures that they are in the intended stacking order during the animation. */
