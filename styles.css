@@ -581,7 +581,10 @@ body > * {
   /* Prevent using the desired minimum width (`39.5rem`) if it exceeds the width of the container. */
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 39.5rem), 1fr));
 
-  gap: 5.6rem 4.8rem;
+  --my-work-grid-row-gap: 5.6rem;
+  --my-work-grid-column-gap: 4.8rem;
+
+  gap: var(--my-work-grid-row-gap) var(--my-work-grid-column-gap);
 }
 
 #project-sort-note {
@@ -992,8 +995,12 @@ TODOs:
 
   /* Fade-in */
 
-  --fade-in: fade-in var(--fade-in-duration) ease-out;
-  --fade-in-duration: 1s;
+  --fade-in: fade-in var(--fade-duration) ease-out;
+
+  /* fade-out */
+  --fade-out: fade-out var(--fade-duration) ease-in;
+
+  --fade-duration: 1s;
 
   /* Grow */
 
@@ -1020,11 +1027,19 @@ TODOs:
   }
 }
 
+@keyframes fade-out {
+  to {
+    /* By default, the element fades-out in its final position. */
+    transform: translate(var(--fade-out-end-x, 0), var(--fade-out-end-y, 0));
+    opacity: 0;
+  }
+}
+
 @keyframes grow {
   from {
     /* By default, scaling starts from zero scale and from the center of the element, with no fade-in effect. */
 
-    transform: scale(var(--grow-start-scale, 0));
+    transform: scale(var(--grow-start-scale-x, 0), var(--grow-start-scale-y, 0));
     transform-origin: var(--grow-origin-x, 50%) var(--grow-origin-y, 50%);
 
     opacity: var(--grow-start-opacity, 1);
@@ -1054,7 +1069,7 @@ TODOs:
   animation: var(--fade-in);
 }
 
-#about-me > *:not(.section-body), .section-body > *:not(.author-photo-credit) {
+#about-me > *:not(.section-body), #about-me .section-body > *:not(.author-photo-credit) {
   --fade-in-start-x: var(--about-me-padding-right);
   --fade-in-start-y: 0;
 
@@ -1067,7 +1082,7 @@ TODOs:
 
   animation: var(--fade-in);
 
-  animation-delay: var(--fade-in-duration);
+  animation-delay: var(--fade-duration);
 
   /* `animation-fill-mode: backwards` forces the rules in the `from` ruleset of the animation to apply to the element during the delay before the animation. */
   animation-fill-mode: backwards;
@@ -1076,6 +1091,20 @@ TODOs:
 #about-me .section-footer {
   --fade-in-start-x: 0;
   --fade-in-start-y: calc(0.5 * var(--about-me-padding-bottom));
+}
+
+/* Scroll-driven and Scroll-triggered animations (Baseline: Limited Availability; not supported in Firefox at the time of creation) */
+
+.project-card {
+  --fade-in-start-x: 0;
+  --fade-in-start-y: calc(2 * var(--my-work-grid-row-gap));
+
+  animation: fade-in linear;
+  animation-fill-mode: both;
+
+  animation-timeline: view();
+  animation-range-start: cover 15%;
+  animation-range-end: contain 0%;
 }
 
 /* Tablet animations */
@@ -1107,7 +1136,9 @@ TODOs:
 
   #author-photo, #about-me {
     /* Starting the grow animation from a large scale makes the animation feel calmer and less aggressive. */
-    --grow-start-scale: 0.75;
+    --grow-start-scale-x: 0.75;
+    --grow-start-scale-y: 0.75;
+
     --grow-start-opacity: 0.25;
 
     animation: var(--grow);
@@ -1135,13 +1166,13 @@ TODOs:
     --fade-in-start-y: 0;
   }
 
-  #about-me > *:is(.section-body, *), .section-body > *:not(.author-photo-credit) {
+  #about-me > *:is(.section-body, *), #about-me .section-body > *:not(.author-photo-credit) {
     --fade-in-start-x: 0;
     --fade-in-start-y: var(--about-me-padding-bottom);
   }
 
   #about-me {
-    --section-footer-animation-delay: calc(0.35 * var(--fade-in-duration));
+    --section-footer-animation-delay: calc(0.35 * var(--fade-duration));
 
     --section-title-fade-in-start-y: -0.5ch;
   }
@@ -1164,6 +1195,6 @@ TODOs:
   }
 
   #about-me .author-photo-credit {
-    animation-delay: calc(var(--fade-in-duration) + var(--section-footer-animation-delay))
+    animation-delay: calc(var(--fade-duration) + var(--section-footer-animation-delay))
   }
 }
