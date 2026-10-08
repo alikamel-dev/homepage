@@ -139,7 +139,8 @@ const sortMethodButton = document.querySelector('#sort-button');
 const sortMethod = document.querySelector('#sort-method');
 
 const changeSortMethodButtonCaption = () => {
-  const sortMethodButtonCaptionWords = sortMethodButton.textContent.split(" ");
+  // `String.prototype.trim()` removes leading and trailing whitespace characters from the button, which cause errors in the logic.
+  const sortMethodButtonCaptionWords = sortMethodButton.textContent.trim().split(" ");
   const lastWordIndex = sortMethodButtonCaptionWords.length - 1;
 
   let lastWord = sortMethodButtonCaptionWords.at(-1);
