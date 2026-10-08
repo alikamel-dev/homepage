@@ -6,6 +6,8 @@
 // (1) Script to handle the text content, attributes, tags, and colors of project image placeholders
 // (2) Script to handle sort method button functionality
 // (3) Script to handle highlighting the project card for the latest project
+// (4) Script to prevent the 'my work' section from being scrolled into middle when an element within it is focused, which in turn prevents the awkward appearence of the first row of cards as they are in the middle of their scroll-driven animations.
+
 
 // (0) Global variables used in multiple scripts
 
@@ -187,3 +189,17 @@ const showProjectCardFrameHandler = () => {
 }
 
 window.addEventListener('scroll', showProjectCardFrameHandler);
+
+// (4) Script to prevent the 'my work' section from being scrolled into middle when an element within it is focused, which in turn prevents the awkward appearence of the first row of cards as they are in the middle of their scroll-driven animations.
+
+const myWorkSection = document.querySelector('#my-work');
+
+myWorkSection.addEventListener('focusin', (e) => {
+  // If the 'my work' section has already been scrolled past, do not scroll it into view.
+  if (window.scrollY > myWorkSection.offsetTop)
+    return;
+
+  myWorkSection.scrollIntoView();
+});
+
+// TODO: Find a way to make project cards centered in the viewport during keyboard navigation.
