@@ -478,19 +478,26 @@ body {
     opacity: 0.55;
 
     /* TODO: Make the decoration resemble frosted glass. Refer to https://www.youtube.com/watch?v=8ykvlLV3xN0. */
-
-    /* TODO: Use better transition timing functions. */
-    transition: transform 300ms ease-out;
   }
 
   #author-name:has(a:hover)::before, #author-name:has(a:focus-visible)::before {
     transform: scaleY(1);
     transform-origin: bottom;
+  }
 
-    /* TODO: Use better transition timing functions. */
-    transition-timing-function: ease-in;
+  @media (not (prefers-reduced-motion: reduce)) {
+    #author-name::before {
+      /* TODO: Use better transition timing functions. */
+      transition: transform 300ms ease-out;
+    }
+
+    #author-name:has(a:hover)::before, #author-name:has(a:focus-visible)::before {
+      /* TODO: Use better transition timing functions. */
+      transition-timing-function: ease-in;
+    }
   }
 }
+
 
 /* Horizontal padding, border, and margin values are defined in percentages, ensuring that widths do not exceed the viewport width. */
 
