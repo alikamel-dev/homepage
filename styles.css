@@ -157,6 +157,10 @@ a:not(.icon, .icon-with-text) {
   color: var(--brand-color-primary-alt);
 }
 
+#author-name > a {
+  color: inherit;
+}
+
 a:hover, a:not(.icon, .icon-with-text):focus-visible {
   text-decoration: underline;
 }
@@ -446,7 +450,46 @@ body {
 }
 
 #author-name {
+  position: relative;
+
+  isolation: isolate;
+
   text-shadow: var(--text-shadow);
+}
+
+@media (width >= 1200px) {
+  #author-name::before {
+    position: absolute;
+    content: '';
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    transform: scaleY(0);
+    transform-origin: bottom;
+
+    z-index: -1;
+
+    /* Alternative brand color goes better with the surrounding header decoration. */
+    background-color: var(--brand-color-primary-alt);
+    opacity: 0.55;
+
+    /* TODO: Make the decoration resemble frosted glass. Refer to https://www.youtube.com/watch?v=8ykvlLV3xN0. */
+
+    /* TODO: Use better transition timing functions. */
+    transition: transform 300ms ease-out;
+  }
+
+  #author-name:has(a:hover)::before, #author-name:has(a:focus-visible)::before {
+    transform: scaleY(1);
+    transform-origin: bottom;
+
+    /* TODO: Use better transition timing functions. */
+    transition-timing-function: ease-in;
+  }
 }
 
 /* Horizontal padding, border, and margin values are defined in percentages, ensuring that widths do not exceed the viewport width. */
@@ -519,10 +562,6 @@ body > * {
   --author-name-padding-left-right: 0.5ch;
 
   padding: 0 var(--author-name-padding-left-right);
-
-  /* Make user select the entire author name by clicking it once. (Baseline: Limited availability) */
-  -webkit-user-select: all;
-  user-select: all;
 }
 
 #author-name span {
