@@ -173,15 +173,19 @@ a.icon:hover, a.icon:focus-visible {
   transition-timing-function: ease-in;
 }
 
-.author-links a.icon[aria-label="GitHub"] {
+a.icon {
+  --original-color: var(--brand-color-primary);
+}
+
+a.icon:has(use[href="#github-logo"]) {
   --original-color: #181717;
 }
 
-.author-links a.icon[aria-label="Bluesky"] {
+a.icon:has(use[href="#bluesky-logo"]) {
   --original-color: #1185FE;
 }
 
-.author-links a.icon[aria-label="Mastodon"] {
+a.icon:has(use[href="#mastodon-logo"]) {
   --original-color: #6364FF;
 }
 
