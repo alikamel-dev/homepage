@@ -498,7 +498,6 @@ body {
   }
 }
 
-
 /* Horizontal padding, border, and margin values are defined in percentages, ensuring that widths do not exceed the viewport width. */
 
 body > * {
@@ -1297,5 +1296,56 @@ body > * {
 
   #page-footer .author-photo-credit.animatable-unit {
     --fade-in-start-y: -1ch;
+  }
+}
+
+/* Scrollbar styles */
+
+@supports selector(::-webkit-scrollbar) {
+  ::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  /* Relative colors, used below, is a Baseline 2024: Newly Available feature. */
+
+  /* TODO: Apply color transitions to scrollbar. */
+
+  ::-webkit-scrollbar-thumb {
+    --scrollbar-thumb-color: var(--brand-color-primary);
+
+    background-color: var(--scrollbar-thumb-color);
+    color: var(--scrollbar-thumb-color);
+  }
+
+  ::-webkit-scrollbar-track, ::-webkit-scrollbar-track-piece {
+    /* Scrollbar buttons were removed on WebKit browsers, so using the secondary brand color (white) will prevent the scrollbar from being distinguishable. */
+
+    /* The color contrast between the thumb and the track must be at least 3.1. */
+    --scrollbar-track-color: hsl(from var(--brand-color-primary) h s 90%);
+
+    background-color: var(--scrollbar-track-color);
+    color: var(--scrollbar-track-color);
+  }
+
+  /* TODO: Apply the same interaction colors to the scrollbar in non-WebKit browsers. */
+
+  ::-webkit-scrollbar-thumb:hover, ::-webkit-scrollbar-track-piece:hover {
+    background-color: hsl(from currentColor h s calc(l * 0.9));
+  }
+
+  ::-webkit-scrollbar-thumb:active, ::-webkit-scrollbar-track-piece:active {
+    background-color: hsl(from currentColor h s calc(l * 1.05));
+  }
+
+  ::-webkit-scrollbar-button {
+    /* The color of the arrow in either scrollbar button cannot be changed using the `color` property. */
+    display: none;
+  }
+}
+
+@supports (scrollbar-color: auto) and (not (selector(::-webkit-scrollbar))) {
+  *, *::before, *::after {
+    /* Scrollbar buttons were not removed on non-WebKit browsers, so using the secondary brand color (white) will not prevent the scrollbar from being distinguishable. */
+    scrollbar-color: var(--brand-color-primary) var(--brand-color-secondary);
   }
 }
