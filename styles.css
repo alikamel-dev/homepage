@@ -458,10 +458,18 @@ body {
 }
 
 @media (width >= 1200px) {
-  #author-name::before {
-    position: absolute;
-    content: '';
+  /* TODO: Simplify the following by delegating tasks done by `#author-name::before` to `#author-name > .frosted-glass-backdrop`. Attempt to do this resulted in blur effect no longer working, and flickering on hover. */
 
+  #author-name > .frosted-glass-backdrop {
+    /* Baseline 2024: Newly Available */
+    backdrop-filter: blur(2px);
+
+    pointer-events: none;
+  }
+
+  #author-name::before, #author-name > .frosted-glass-backdrop {
+    position: absolute;
+    
     top: 0;
     left: 0;
 
@@ -472,26 +480,28 @@ body {
     transform-origin: bottom;
 
     z-index: -1;
+  }
+
+  #author-name::before {
+    content: '';
 
     /* Alternative brand color goes better with the surrounding header decoration. */
     background-color: var(--brand-color-primary-alt);
-    opacity: 0.55;
-
-    /* TODO: Make the decoration resemble frosted glass. Refer to https://www.youtube.com/watch?v=8ykvlLV3xN0. */
+    opacity: 0.5;
   }
 
-  #author-name:has(a:hover)::before, #author-name:has(a:focus-visible)::before {
+  #author-name:has(a:hover)::before, #author-name:has(a:hover) > .frosted-glass-backdrop, #author-name:has(a:focus-visible)::before, #author-name:has(a:focus-visible) > .frosted-glass-backdrop {
     transform: scaleY(1);
     transform-origin: bottom;
   }
 
   @media (not (prefers-reduced-motion: reduce)) {
-    #author-name::before {
+    #author-name::before, #author-name > .frosted-glass-backdrop {
       /* TODO: Use better transition timing functions. */
       transition: transform 300ms ease-out;
     }
 
-    #author-name:has(a:hover)::before, #author-name:has(a:focus-visible)::before {
+  #author-name:has(a:hover)::before, #author-name:has(a:hover) > .frosted-glass-backdrop, #author-name:has(a:focus-visible)::before, #author-name:has(a:focus-visible) > .frosted-glass-backdrop {
       /* TODO: Use better transition timing functions. */
       transition-timing-function: ease-in;
     }
