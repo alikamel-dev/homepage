@@ -4,20 +4,10 @@
 
 A responsive homepage — something you might find on a portfolio site of sorts.
 
+This is my final HTML/CSS project in the [Full Stack JavaScript](https://theodinproject.com/paths/full-stack-javascript) path of [The Odin Project (TOP)](https://theodinproject.com), created as a practice on [responsive design](https://theodinproject.com/paths/full-stack-javascript/courses/advanced-html-and-css#responsive-design), with an additional focus on accessibility on my part.
+
 > [!NOTE]
 > I am _temporarily_ using this project as my portfolio site until I build one when I finish The Odin Project's curriculum. Even then, it is going to be continually updated to include any new projects.
-
-> [!NOTE]
-> **New features and fixes!** (ordered from most recent)
-> - Project screenshots (may show low quality on greater viewport widths, but I am going to try to solve this later)
-> - Scroll-driven animations for page sections, except header.
-> - Make visual viewport (visible part of the page in browser window) only contain page header on page load
-> - Page-load animations for header
-> 
-> **Features and fixes coming soon!** (ordered from first to be implemented)
-> 1. Scroll-triggered instead of Scroll-driven animations for "Contact me" section
-
-This is my final HTML/CSS project in the [Full Stack JavaScript](https://theodinproject.com/paths/full-stack-javascript) path of [The Odin Project (TOP)](https://theodinproject.com), created as a practice on [responsive design](https://theodinproject.com/paths/full-stack-javascript/courses/advanced-html-and-css#responsive-design), with an additional focus on accessibility on my part.
 
 > [!NOTE]
 > Despite being primarily a practice project, contributions are still welcome! You can try resolving any [issues](https://github.com/alikamel-dev/homepage/issues), or, if you think you have found one, feel free to [create an issue](https://github.com/alikamel-dev/homepage/issues/new) or solve it and [create a pull request](https://github.com/alikamel-dev/homepage/compare). Note that pull requests implementing tasks in the [todo file](https://github.com/alikamel-dev/tree/main/todo.md) will be rejected.
@@ -62,6 +52,8 @@ The site is designed to closely resemble the [original design](https://github.co
 - In the design files, the right padding is smaller than the left in desktop and tablet layouts, but my implementation makes them equal.
 
 - Interaction effects (e.g. hover and focus effects), transitions and animations were entirely decided by me.
+
+- A custom scrollbar using the main color of the site (and some variations of it) replaces the default scrollbar.
 
 - Obviously there are slight differences in text, icon, and image sizes, as well as differences in spacing, alignment, and other properties, mainly due to the lack of any measurements in the original design, and sometimes for aesthetic purposes.
 
