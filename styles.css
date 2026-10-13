@@ -882,6 +882,8 @@ body > * {
     /* Override the `padding-top: 0;` rule used in desktop layout. */
     padding-top: var(--padding-top-bottom);
 
+    min-height: initial;
+
     height: auto;
   }
 
