@@ -943,12 +943,20 @@ body > * {
 
 /* Mobile styles */
 @media (width < 600px) {
+  .section-title, .section-subtitle {
+    text-align: center;
+  }
+
   .section-title {
     --section-title-margin-bottom: 4px;
 
     text-align: center;
 
     margin-bottom: calc(var(--section-title-margin-bottom) / 2);
+  }
+
+  .section-title:has(+ .section-subtitle) {
+    margin-bottom: calc(var(--section-title-margin-bottom) * 2);
   }
 
   #page-header .author-links, #page-footer .author-links {
