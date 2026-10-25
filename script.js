@@ -1,5 +1,7 @@
 // File containing all scripts required for page functionality. Might split the script into multiple modules later.
 
+// TODO: Reorder the scripts
+
 // List of scripts used
 // --------------------
 // (0) Global variables used in multiple scripts
@@ -7,6 +9,7 @@
 // (2) Script to handle sort method button functionality
 // (3) Script to handle highlighting the project card for the latest project
 // (4) Script to prevent the 'my work' section from being scrolled into middle when an element within it is focused, which in turn prevents the awkward appearence of the first row of cards as they are in the middle of their scroll-driven animations.
+// (5) Script to show the number of projects in the 'my work' section
 
 
 // (0) Global variables used in multiple scripts
@@ -163,6 +166,9 @@ sortMethodButton.addEventListener('click', () => {
 // (3) Script to handle highlighting the project card for the latest project
 
 const isElementInView = (element) => {
+  if (!element)
+    return;
+
   const elementRectangle = element.getBoundingClientRect();
 
   return (elementRectangle.top >= 0);
@@ -204,3 +210,22 @@ myWorkSection.addEventListener('focusin', (e) => {
 });
 
 // TODO: Find a way to make project cards centered in the viewport during keyboard navigation.
+
+// (5) Script to show the number of projects in the 'my work' section
+
+const projectSortNote = myWorkSection.querySelector('#project-sort-note');
+const numberOfProjectsBringAttentionTo = projectSortNote.querySelector('#number-of-projects');
+const numberOfProjects = projectCards.length;
+
+if (numberOfProjects < 2) {
+  myWorkSection.removeChild(projectSortNote);
+
+  // TODO: Handle the case where the number of projects is zero.
+
+  if (numberOfProjects === 0) {
+    const noProjectsParagraph = document.createElement('p');
+    noProjectsParagraph.textContent = 'No projects to see here at the moment.';
+
+    myWorkSection.insertBefore(noProjectsParagraph, projectCardsContainer);
+  }
+} else numberOfProjectsBringAttentionTo.textContent = numberOfProjects;
