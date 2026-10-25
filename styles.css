@@ -758,6 +758,10 @@ body > * {
   text-align: center;
 
   text-transform: lowercase;
+
+  /* Baseline: Limited Availability */
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .project-image {
