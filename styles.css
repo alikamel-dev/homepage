@@ -395,6 +395,10 @@ small {
   --author-link-width: 2.2em;
 }
 
+.emoji {
+  font-style: normal;
+}
+
 .no-italics {
   font-style: normal;
 }
