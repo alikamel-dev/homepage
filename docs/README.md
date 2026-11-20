@@ -74,6 +74,8 @@ The site is designed to closely resemble the [original design](https://github.co
 
 - There are _latest_ and _in progress_ tags in the upper-left corner of the card corresponding to the latest project and cards corresponding to projects in progress, respectively.
 
+- The _screenshot of project_ placeholder is replaced by different text for cards corresponding to projects in progress. The said text is randomly selected from a set of hard-coded in-progress messages on page load, and is continously changed to a different message as long as the page is open.
+
 - The card corresponding to the latest project is highlighted for a small amount of time when scrolled into view.
 
 - Cards corresponding to projects in progress do not contain links to their GitHub repositories or GitHub Pages websites.

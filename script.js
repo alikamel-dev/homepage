@@ -34,7 +34,8 @@ const projectImagePlaceholderColors = [
 const inProgressProjectImagePlaceholderText = [
   'Coming soon',
   'Stay tuned',
-]
+  'in progress',
+];
 
 let unusedColors = [...projectImagePlaceholderColors];
 let lastUsedColorName = null;
@@ -81,6 +82,40 @@ const randomInProgressProjectImagePlaceholderText = () => {
 
   return inProgressProjectImagePlaceholderText[randomTextIndex];
 }
+
+const startInProgressProjectImagePlaceholderTextChangeInterval = () => {
+  window.setInterval(() => {
+    projectCards.forEach(projectCard => {
+      if (projectCard.dataset.tag !== 'in-progress')
+        return;
+
+      const projectImagePlaceholderText = projectCard.querySelector('.project-image-placeholder-text');
+      const projectImagePlaceholderTextContent = projectImagePlaceholderText.textContent;
+
+      let newProjectImagePlaceholderTextContent = null;
+
+      while (newProjectImagePlaceholderTextContent === null || newProjectImagePlaceholderTextContent === projectImagePlaceholderTextContent) {
+        newProjectImagePlaceholderTextContent = randomInProgressProjectImagePlaceholderText();
+      };
+
+      // Start the exit animation
+      projectImagePlaceholderText.style.transitionTimingFunction = 'ease-in';
+      const projectImagePlaceholderTextTransitionProperty = getComputedStyle(projectImagePlaceholderText).getPropertyValue('--transition-property').trim();
+      projectImagePlaceholderText.style[projectImagePlaceholderTextTransitionProperty] = 0;
+
+      window.setTimeout(() => {
+        projectImagePlaceholderText.textContent = newProjectImagePlaceholderTextContent;
+
+        projectImagePlaceholderText.style.transitionTimingFunction = 'ease-out';
+
+        // Start the entry animation only after the new text has been inserted.
+        projectImagePlaceholderText.style[projectImagePlaceholderTextTransitionProperty] = 1;
+      }, parseFloat(getComputedStyle(projectImagePlaceholderText).getPropertyValue('--transition-duration')));
+    });
+  }, 2500);
+}
+
+let areAnyProjectsInProgress = projectCards.some(projectCard => projectCard.dataset.tag === 'in-progress');
 
 projectCards.forEach(card => {
   const projectImagePlaceholder = card.querySelector('.project-image-container');
@@ -135,6 +170,13 @@ projectCards.forEach(card => {
   projectImagePlaceholder.style.backgroundColor = usedColor.colorName;
   lastUsedColorName = usedColor.colorName;
 });
+
+if (areAnyProjectsInProgress) {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!prefersReducedMotion)
+    startInProgressProjectImagePlaceholderTextChangeInterval();
+}
 
 // (2) Script to handle sort method button functionality
 

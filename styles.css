@@ -766,6 +766,15 @@ body > * {
   /* Baseline: Limited Availability */
   -webkit-user-select: none;
   user-select: none;
+
+  /* Transition used by JavaScript while changing placeholder text on a periodical basis. Changing placeholder text does not occur if the user prefers reduced motion. */
+
+  --transition-property: opacity;
+  --transition-duration: 500ms;
+
+  transition-property: var(--transition-property);
+  transition-duration: var(--transition-duration);
+  transition-timing-function: ease-in;
 }
 
 .project-image {
